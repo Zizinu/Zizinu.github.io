@@ -18,7 +18,7 @@ let lastMouseY = -1;
   for (let i = 0; i < 8; i++) {
     let x = random(100, width - 100);
     let y = random(100, height - 100);
-    let imagePath = `/slide_test_1/assets/img/cat_${i + 1}.jpg`;
+    let imagePath = `/assets/cat_${i + 1}.jpg`;
     console.log(`Attempting to load image: ${imagePath}`); 
     items.push(new Item(x, y, imagePath));
   }
