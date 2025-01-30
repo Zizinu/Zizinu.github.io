@@ -29,6 +29,23 @@ body, html {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background:#009177;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#0a00f5, #f50070);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+  background: #0a00f5;
+}
+
 .section_1 {
   position: absolute;
   width: 100vw;
@@ -36,7 +53,6 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   top: 0;
   left: 0;
   z-index: 1;
@@ -49,7 +65,6 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   top: 100vh;
   left: 0;
   aspect-ratio: 16 / 9;
@@ -59,11 +74,10 @@ body, html {
   width: 100vw; 
   height: 100vh; 
   object-fit: cover;
-  position: fixed; 
+  position: absolute; 
   top: 0;
   left: 0;
   z-index: 2; 
-  overflow: hidden;
 } 
 
 .wrapper {
@@ -147,7 +161,6 @@ body, html {
   --end-angle: -18deg;
 } 
 
-
 .text-content {
   position: absolute;
   width: 100%;
@@ -159,21 +172,15 @@ body, html {
   z-index: 1;
 }
 
-/* .text-homepage {
-  top: 50%;
-  left: 50%;
-  color: white;
-  font-size: var(--fz-big);
-  cursor: pointer;
-} */
-
 .text {
+  justify-content: center;
   position: absolute;
   top: 78%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--font-color);
-  font-size: var(--fz-small);
+  width: 7%;
+  height: 7%;
+  object-fit: contain;
 }
 
 .content_2 {
@@ -191,62 +198,78 @@ body, html {
 }
 
 .content_3 {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content_3 img {
-  width: 30%;
-  height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  transition: transform 0.1s ease; 
+}
+
+.content_3 img:hover {
+  transform: scale(1.2);  
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.alle img {
+.alle,
+.katzen,
+.anne,
+.oma_und_opa,
+.ayleen,
+.tante {
+  transform-origin: center;
   position: absolute;
-  top: 65%;
-  left: 20%;
 }
 
-.anne img {
-  transform: rotate(3deg);
-  position: absolute;
-  top: 12%;
-  left: 78%;
+.alle {
+  width: 44%; /*44*/
+  height: 44%; /*44*/
+  transform: rotate(-3deg);
+  top: 10%; /*10*/
+  left: 10%; /*10*/
 }
 
-.ayleen img {
-  transform: rotate(-4deg);
-  position: absolute;
-  top: 73%;
-  left: 69%;
+.katzen {
+  width: 44%; /*44*/
+  height: 44%; /*44*/
+  transform: rotate(6deg);
+  top: 44%; /*44*/
+  left: 6%; /*6*/
 }
 
-.katzen img {
-  transform: rotate(1deg);
-  position: absolute;
-  top: 93%;
-  left: 59%;
+.anne {
+  width: 46%; /*46*/
+  height: 46%; /*46*/
+  transform: rotate(5deg);
+  top: 6%; /*6*/
+  left: 30%; /*30*/
 }
 
-.oma_und_opa img {
-  transform: rotate(-1.5deg);
-  position: absolute;
-  top: 19%;
-  left: 28%;
+.oma_und_opa {
+  width: 54%; /*54*/
+  height: 54%; /*54*/
+  transform: rotate(-5deg);
+  top: 44%; /*44*/
+  left: 25%; /*25*/
 }
 
-.tante img {
-  transform: rotate(2.5deg);
-  position: absolute;
-  top: 80%;
-  left: 72%;
+.ayleen {
+  width: 72%; /*72*/
+  height: 72%; /*72*/
+  transform: rotate(-6deg);
+  top: 0%; /*0*/
+  left: 40%; /*40*/
 }
 
-.content_3 p {
-  font-size: var(--fz-small);
-  text-align: center;
+.tante {
+  width: 56%; /*56*/
+  height: 56%; /*56*/
+  transform: rotate(2deg);
+  top: 40%; /*40*/
+  left: 44%; /*44*/
 }
